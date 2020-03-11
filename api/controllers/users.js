@@ -43,7 +43,7 @@ module.exports = {
     login: (req, res) => {
         const { email, password } = req.body;
 
-        user. find({ email }).then((users) => {
+        User.find({ email }).then((users) => {
             if (users.length === 0) {
                 return res.status(401).json({
                     message: 'Unauthorized - authentication failed'
